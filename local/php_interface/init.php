@@ -13,6 +13,12 @@ function autoload($name)
     }
 }
 
+
+/**
+ * Обёртка над функцией print_r
+ * @param mixed $mVar
+ * @param bool $in_file
+ */
 function p($mVar = false, $in_file = false)
 {
     if ($in_file) {
