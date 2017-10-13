@@ -7,6 +7,6 @@
  * Project: projects.local
  */
 
-CModule::AddAutoloadClasses('highloadblock', array(
+CModule::AddAutoloadClasses('simba.projects', array(
     'Simba\Projects\Projects' => 'lib/Projects.php',
 ));
