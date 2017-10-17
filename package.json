@@ -1,0 +1,19 @@
+{
+  "name": "projects.symbos.su",
+  "version": "1.0.0",
+  "description": "Projects module",
+  "license": "MIT",
+  "repository": " ",
+  "devDependencies": {
+    "grunt": "latest",
+    "grunt-contrib-jshint": "latest",
+    "jshint-stylish": "latest",
+    "grunt-contrib-uglify": "latest",
+    "grunt-contrib-sass": "latest",
+    "grunt-contrib-cssmin": "latest",
+    "grunt-contrib-compass": "latest",
+    "grunt-contrib-watch": "latest",
+    "grunt-contrib-imagemin": "latest",
+    "grunt-html-build": "latest"
+  }
+}
