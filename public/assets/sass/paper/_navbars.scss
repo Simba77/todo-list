@@ -5,6 +5,19 @@
             background-color: transparent;
         }
     }
+    ul {
+        list-style: none;
+        padding-left: 70px;
+        li {
+            padding: 4px 0;
+            a {
+                padding-left: 0!important;
+            }
+            ul {
+                padding-left: 15px;
+            }
+        }
+    }
 }
 .navbar{
     border: $none;

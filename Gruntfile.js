@@ -1,6 +1,6 @@
 module.exports = function (grunt) {
     grunt.initConfig({
-        // Проверка js на корректность
+        // РџСЂРѕРІРµСЂРєР° js РЅР° РєРѕСЂСЂРµРєС‚РЅРѕСЃС‚СЊ
         jshint: {
             files: ['Gruntfile.js', 'src/**/*.js'],
             options: {
@@ -9,7 +9,7 @@ module.exports = function (grunt) {
                 }
             }
         },
-        // Отслеживание изменений
+        // РћС‚СЃР»РµР¶РёРІР°РЅРёРµ РёР·РјРµРЅРµРЅРёР№
         watch: {
             files: [
                 '<%= jshint.files %>',
@@ -20,9 +20,9 @@ module.exports = function (grunt) {
                 'public/assets/js/*.js',
                 '!public/assets/js/app.js'
             ],
-            tasks: ['sass:dev', 'cssmin', 'uglify', 'imagemin'] // При необходимости можно повесить все задачи по сборке сюда
+            tasks: ['sass:dev', 'cssmin', 'uglify', 'imagemin'] // РџСЂРё РЅРµРѕР±С…РѕРґРёРјРѕСЃС‚Рё РјРѕР¶РЅРѕ РїРѕРІРµСЃРёС‚СЊ РІСЃРµ Р·Р°РґР°С‡Рё РїРѕ СЃР±РѕСЂРєРµ СЃСЋРґР°
         },
-        // Компиляция sass
+        // РљРѕРјРїРёР»СЏС†РёСЏ sass
         sass: {
             dev: {
                 options: {
@@ -38,7 +38,7 @@ module.exports = function (grunt) {
                 }]
             }
         },
-        // Сборка, очистка, сжатие js в один файл. Windows 1251 не поддерживается, посему пока не используется.
+        // РЎР±РѕСЂРєР°, РѕС‡РёСЃС‚РєР°, СЃР¶Р°С‚РёРµ js РІ РѕРґРёРЅ С„Р°Р№Р». Windows 1251 РЅРµ РїРѕРґРґРµСЂР¶РёРІР°РµС‚СЃСЏ, РїРѕСЃРµРјСѓ РїРѕРєР° РЅРµ РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ.
         uglify: {
             options: {
                 sourceMap: false,
@@ -58,7 +58,7 @@ module.exports = function (grunt) {
                 }
             }
         },
-        // Сборка и сжатие css в один файл
+        // РЎР±РѕСЂРєР° Рё СЃР¶Р°С‚РёРµ css РІ РѕРґРёРЅ С„Р°Р№Р»
         cssmin: {
             options: {
                 keepSpecialComments: 0
@@ -87,21 +87,21 @@ module.exports = function (grunt) {
         }
     });
 
-    // Загружаем задачи
+    // Р—Р°РіСЂСѓР¶Р°РµРј Р·Р°РґР°С‡Рё
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
 
-    // Сжатие изображений
+    // РЎР¶Р°С‚РёРµ РёР·РѕР±СЂР°Р¶РµРЅРёР№
     grunt.loadNpmTasks('grunt-contrib-imagemin');
 
-    // Задача для разработки
+    // Р—Р°РґР°С‡Р° РґР»СЏ СЂР°Р·СЂР°Р±РѕС‚РєРё
     grunt.registerTask('dev', ['watch']);
     grunt.registerTask('upcss', ['cssmin']);
 
-    // Задача для сборки
+    // Р—Р°РґР°С‡Р° РґР»СЏ СЃР±РѕСЂРєРё
     grunt.registerTask('default', ['sass', 'uglify', 'cssmin']);
     grunt.registerTask('build', ['sass', 'uglify', 'cssmin']);
 

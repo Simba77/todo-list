@@ -1395,6 +1395,19 @@ textarea.form-control {
 .nav > li > a:focus {
   background-color: transparent;
 }
+.nav ul {
+  list-style: none;
+  padding-left: 70px;
+}
+.nav ul li {
+  padding: 4px 0;
+}
+.nav ul li a {
+  padding-left: 0 !important;
+}
+.nav ul li ul {
+  padding-left: 15px;
+}
 
 .navbar {
   border: 0;

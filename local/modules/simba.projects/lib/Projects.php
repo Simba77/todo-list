@@ -7,7 +7,7 @@
  * Project: projects.local
  */
 
-namespace Simba\Projects\Projects;
+namespace Simba\Projects;
 
 
 class Projects
