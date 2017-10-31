@@ -14,7 +14,10 @@ use \Bitrix\Main\Page\Asset;
     <meta name="viewport" content="width=device-width, user-scalable=no"/>
     <?
     Asset::getInstance()->addCss('/public/assets/css/app.css');
+    Asset::getInstance()->addJs('/public/assets/js/app.js');
     ?>
+    <script src="https://unpkg.com/vue"></script>
+    <!--<script src="https://cdn.jsdelivr.net/npm/vue"></script>-->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
     <? $APPLICATION->ShowHead(); ?>

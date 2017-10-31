@@ -5,7 +5,7 @@
 
 $rsSections = CIBlockSection::GetList(
     [], ['IBLOCK_ID' => $arParams['IBLOCK_ID'], 'ID' => $arParams['PARENT_SECTION']],
-    false, ['NAME', 'DESCRIPTION_TYPE', 'DESCRIPTION', 'UF_*']
+    false, ['ID', 'NAME', 'DESCRIPTION_TYPE', 'DESCRIPTION', 'UF_*']
 );
 
 $arResult['SECTION_DATA'] = $rsSections->GetNext();

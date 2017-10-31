@@ -25,7 +25,10 @@ $all_money = 0;
 
                     Стоимость часа: <b><?= $arResult['SECTION_DATA']['UF_HOUR_PRICE'] ?> руб.</b>
                 </p>
-
+                <p>
+                    <br>
+                    <a href="/projects/add_task.php?section_id=<?= $arResult['SECTION_DATA']['ID'] ?>" class="btn button btn-default">Добавить задачу</a>
+                </p>
             </div>
             <div class="content table-responsive table-full-width">
 
@@ -43,7 +46,7 @@ $all_money = 0;
                     <tbody>
                     <? if (empty($arResult["ITEMS"])): ?>
                         <tr>
-                            <td colspan="7" class="text-center">
+                            <td colspan="8" class="text-center">
                                 <b>Список пуст</b>
                             </td>
                         </tr>

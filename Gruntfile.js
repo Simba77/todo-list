@@ -53,6 +53,7 @@ module.exports = function (grunt) {
                         'public/assets/js/chartist.min.js',
                         'public/assets/js/bootstrap-notify.js',
                         'public/assets/js/paper-dashboard.js',
+                        'public/assets/js/datepicker.js',
                         'public/assets/js/demo.js'
                     ]
                 }
@@ -70,6 +71,7 @@ module.exports = function (grunt) {
                         'public/assets/css/animate.min.css',
                         'public/assets/css/paper-dashboard.css',
                         'public/assets/css/demo.css',
+                        'public/assets/css/datepicker.css',
                         'public/assets/css/themify-icons.css'
                     ]
                 }
