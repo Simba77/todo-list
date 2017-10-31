@@ -10,12 +10,20 @@
 /** @var string $templateFolder */
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
+
+use \Simba\Projects\Projects;
+
 $this->setFrameMode(true);
-$rsSections = CIBlockSection::GetList(
+\Bitrix\Main\Loader::includeModule('simba.projects');
+
+
+$rsSections = \CIBlockSection::GetList(
     [], ['IBLOCK_ID' => $arParams['IBLOCK_ID'], 'ID' => $arResult["VARIABLES"]["SECTION_ID"]],
     false, ['ID', 'NAME', 'DESCRIPTION_TYPE', 'DESCRIPTION', 'UF_*']
 );
 $arResult['SECTION_DATA'] = $rsSections->GetNext();
+
+$dates = Projects::getDates();
 
 ?>
 <div class="row">
@@ -48,26 +56,21 @@ $arResult['SECTION_DATA'] = $rsSections->GetNext();
                                     <i class="ti-angle-left"></i>
 								</button>
 								<div class="select-month">
-									<select name="years" id="years" class="form-control border-input">
-										<option label="- Год -" value="0">- Год -</option>
-										<option label="2017" value="2017" selected="selected">2017</option>
+									<select name="year" id="year" class="form-control border-input">
+                                        <? foreach($dates['years'] as $year): ?>
+                                            <option value="<?= $year['id'] ?>"
+                                                <?= ($year['id'] == $dates['year'] ? 'selected="selected"' : '') ?>
+                                            ><?= $year['name'] ?></option>
+                                        <? endforeach; ?>
 									</select>
 								</div>
 								<div class="select-month">
-									<select name="months" id="months" class="form-control border-input">
-										<option label="- Месяц -" value="0">- Месяц -</option>
-										<option label="Январь" value="1">Январь</option>
-										<option label="Февраль" value="2">Февраль</option>
-										<option label="Март" value="3">Март</option>
-										<option label="Апрель" value="4">Апрель</option>
-										<option label="Май" value="5">Май</option>
-										<option label="Июнь" value="6">Июнь</option>
-										<option label="Июль" value="7">Июль</option>
-										<option label="Август" value="8">Август</option>
-										<option label="Сентябрь" value="9">Сентябрь</option>
-										<option label="Октябрь" value="10" selected="selected">Октябрь</option>
-										<option label="Ноябрь" value="11">Ноябрь</option>
-										<option label="Декабрь" value="12">Декабрь</option>
+									<select name="month" id="month" class="form-control border-input">
+                                        <? foreach($dates['months'] as $month): ?>
+                                            <option value="<?= $month['id'] ?>"
+                                                <?= ($month['id'] == $dates['month'] ? 'selected="selected"' : '') ?>
+                                            ><?= $month['name'] ?></option>
+                                        <? endforeach; ?>
 									</select>
 								</div>
 								<div class="period">
