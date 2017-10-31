@@ -15,22 +15,6 @@ $all_time = 0;
 $all_money = 0;
 ?>
 
-<div class="row">
-    <div class="col-md-12">
-        <div class="card">
-            <div class="header">
-                <h4 class="title"><?= $arResult['SECTION_DATA']['NAME'] ?></h4>
-                <p class="category">
-                    <?= $arResult['SECTION_DATA']['DESCRIPTION'] ?>
-
-                    Стоимость часа: <b><?= $arResult['SECTION_DATA']['UF_HOUR_PRICE'] ?> руб.</b>
-                </p>
-                <p>
-                    <br>
-                    <a href="/projects/add_task.php?section_id=<?= $arResult['SECTION_DATA']['ID'] ?>" class="btn button btn-default">Добавить задачу</a>
-                </p>
-            </div>
-            <div class="content table-responsive table-full-width">
 
                 <table class="table table-striped">
                     <thead>
@@ -87,10 +71,6 @@ $all_money = 0;
                     </tfoot>
                 </table>
 
-            </div>
-        </div>
-    </div>
-</div>
 
 <? if ($arParams["DISPLAY_BOTTOM_PAGER"]): ?>
     <?= $arResult["NAV_STRING"] ?>
